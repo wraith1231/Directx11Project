@@ -14,9 +14,11 @@ void SetSingleton()
 
 void DestroySingleton()
 {
-	Common::Singleton<D3D>::Destroy();
-	Common::Singleton<InputManager>::Destroy();
+	Common::Singleton<States>::Destroy();
+	Common::Singleton<ShaderManager>::Destroy();
 	Common::Singleton<TimeManager>::Destroy();
+	Common::Singleton<InputManager>::Destroy();
+	Common::Singleton<D3D>::Destroy();
 }
 
 int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -34,9 +36,9 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 
 	windows->Clear();
 
-	delete windows;
-
 	DestroySingleton();
+
+	delete windows;
 
 	return 0;
 }

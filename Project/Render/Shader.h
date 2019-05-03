@@ -60,6 +60,13 @@ public:
 
 	void CreateInputLayout();
 
+	string GetVertexShaderName() { return vertexShaderName; }
+	string GetHullShaderName() { return hullShaderName; }
+	string GetDomainShaderName() { return domainShaderName; }
+	string GetGeometryShaderName() { return geometryShaderName; }
+	string GetComputeShaderName() { return computeShaderName; }
+	string GetPixelShaderName() { return pixelShaderName; }
+
 private:
 	void CheckShaderError(HRESULT hr, ID3DBlob* error);
 

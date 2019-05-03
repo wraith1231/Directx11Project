@@ -61,14 +61,14 @@
     <ClCompile Include="System\TimeManager.cpp">
       <Filter>System</Filter>
     </ClCompile>
-    <ClCompile Include="System\stdafx.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Render\Shader.cpp">
       <Filter>Render</Filter>
     </ClCompile>
     <ClCompile Include="Render\States.cpp">
       <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

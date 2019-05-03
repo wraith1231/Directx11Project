@@ -157,11 +157,11 @@
     <ClCompile Include="Project.cpp" />
     <ClCompile Include="Render\Shader.cpp" />
     <ClCompile Include="Render\States.cpp" />
-    <ClCompile Include="System\D3D.cpp" />
-    <ClCompile Include="System\InputManager.cpp" />
-    <ClCompile Include="System\stdafx.cpp">
+    <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="System\D3D.cpp" />
+    <ClCompile Include="System\InputManager.cpp" />
     <ClCompile Include="System\TimeManager.cpp" />
     <ClCompile Include="System\Windows.cpp" />
   </ItemGroup>
