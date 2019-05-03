@@ -1,0 +1,5 @@
+*.db
+*.aps
+*.suo
+Project/Debug/
+Project/ipch/
