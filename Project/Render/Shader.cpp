@@ -463,6 +463,8 @@ ShaderManager::~ShaderManager()
 
 void ShaderManager::AddShader(wstring fileName, string vsName, string hsName, string dsName, string gsName, string csName, string psName)
 {
+	if (fileName.length() < 1) return;
+
 	map<wstring, Shader*>::iterator iter = shaders.find(fileName);
 	if (iter != shaders.end())
 	{
@@ -486,6 +488,40 @@ void ShaderManager::AddShader(wstring fileName, string vsName, string hsName, st
 	shader->CreateInputLayout();
 
 	shaders[fileName] = shader;
+}
+
+void ShaderManager::AddShaderProcess(wstring fileName, ShaderManagingType type, string name)
+{
+	if (fileName.length() < 1)
+		return;
+
+	map<wstring, Shader*>::iterator iter = shaders.find(fileName);
+	if (iter == shaders.end())
+		return;
+
+	switch (type)
+	{
+	case SHADER_MANAGE_VERTEX:
+		(iter->second)->CreateVertexShader(name);
+		break;
+	case SHADER_MANAGE_HULL:
+		(iter->second)->CreateHullShader(name);
+		break;
+	case SHADER_MANAGE_DOMAIN:
+		(iter->second)->CreateDomainShader(name);
+		break;
+	case SHADER_MANAGE_GEOMETRY:
+		(iter->second)->CreateGeometryShader(name);
+		break;
+	case SHADER_MANAGE_COMPUTE:
+		(iter->second)->CreateComputeShader(name);
+		break;
+	case SHADER_MANAGE_PIXEL:
+		(iter->second)->CreatePixelShader(name);
+		break;
+	default:
+		break;
+	}
 }
 
 void ShaderManager::Render(wstring fileName)

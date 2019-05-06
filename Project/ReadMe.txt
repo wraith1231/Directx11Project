@@ -1,4 +1,8 @@
-﻿19.05.04
+﻿19.05.06
+./Render/Shader에 ShaderManager에 AddShaderProcess 추가했습니다, 파일 이름, 추가할 쉐이더 단계, 함수 이름 전달받으면 해당하는 shader가 있는지 확인후 만들어줍니다
+./Common.h에 Shader에 전달할 Vertex 정보들 구조체 넣어뒀습니다.
+
+19.05.04
 오늘은 아무 것도 안했습니다
 ./Render/Shader에 대해서, 그냥 쉐이더 함수 다른 이름이면 새로 파일 만드는걸로 고려를...
 

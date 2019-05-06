@@ -6,7 +6,7 @@
 
 enum SHADERBUFFERTYPE
 {
-	SHADER_NONE,
+	SHADER_NONE = 0,
 	SHADER_VERTEX,
 	SHADER_DOMAIN,
 	SHADER_HULL,
@@ -102,6 +102,17 @@ private:
 // Shader Manager Class
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
+enum ShaderManagingType
+{
+	SHADER_MANAGE_VERTEX = 0,
+	SHADER_MANAGE_HULL,
+	SHADER_MANAGE_DOMAIN,
+	SHADER_MANAGE_GEOMETRY,
+	SHADER_MANAGE_COMPUTE,
+	SHADER_MANAGE_PIXEL,
+	SHADER_MANAGE_COUNT
+};
+
 class ShaderManager
 {
 public:
@@ -110,6 +121,7 @@ public:
 
 	void AddShader(wstring fileName = L"", string vsName = "", string hsName = "", string dsName = ""
 		, string gsName = "", string csName = "", string psName = "");
+	void AddShaderProcess(wstring fileName, ShaderManagingType type, string name);
 
 	void Render(wstring fileName);
 
