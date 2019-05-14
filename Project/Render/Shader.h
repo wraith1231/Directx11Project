@@ -67,6 +67,13 @@ public:
 	string GetComputeShaderName() { return computeShaderName; }
 	string GetPixelShaderName() { return pixelShaderName; }
 
+	void SetVertexShader();
+	void SetHullShader();
+	void SetDomainShader();
+	void SetGeometryShader();
+	void SetComputeShader();
+	void SetPixelShader();
+
 private:
 	void CheckShaderError(HRESULT hr, ID3DBlob* error);
 
@@ -123,6 +130,7 @@ public:
 		, string gsName = "", string csName = "", string psName = "");
 	void AddShaderProcess(wstring fileName, ShaderManagingType type, string name);
 
+	void SetShader(wstring fileName, ShaderManagingType type);
 	void Render(wstring fileName);
 
 	//ALL SET SHADER NULL

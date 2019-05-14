@@ -333,6 +333,66 @@ void Shader::CreatePixelShader(string psName)
 	pixelShaderName = psName;
 }
 
+void Shader::SetVertexShader()
+{
+	if (vertexShaderName.length() < 1)
+		return;
+	if (vertexShader == NULL)
+		return;
+
+	Common::Singleton<D3D>::Get()->GetDC()->VSSetShader(vertexShader, NULL, 0);
+}
+
+void Shader::SetHullShader()
+{
+	if (hullShaderName.length() < 1)
+		return;
+	if (hullShader == NULL)
+		return;
+
+	Common::Singleton<D3D>::Get()->GetDC()->HSSetShader(hullShader, NULL, 0);
+}
+
+void Shader::SetDomainShader()
+{
+	if (domainShaderName.length() < 1)
+		return;
+	if (domainShader == NULL)
+		return;
+
+	Common::Singleton<D3D>::Get()->GetDC()->DSSetShader(domainShader, NULL, 0);
+}
+
+void Shader::SetGeometryShader()
+{
+	if (geometryShaderName.length() < 1)
+		return;
+	if (geometryShader == NULL)
+		return;
+
+	Common::Singleton<D3D>::Get()->GetDC()->GSSetShader(geometryShader, NULL, 0);
+}
+
+void Shader::SetComputeShader()
+{
+	if (computeShaderName.length() < 1)
+		return;
+	if (computeShader == NULL)
+		return;
+
+	Common::Singleton<D3D>::Get()->GetDC()->CSSetShader(computeShader, NULL, 0);
+}
+
+void Shader::SetPixelShader()
+{
+	if (pixelShaderName.length() < 1)
+		return;
+	if (pixelShader == NULL)
+		return;
+
+	Common::Singleton<D3D>::Get()->GetDC()->PSSetShader(pixelShader, NULL, 0);
+}
+
 void Shader::CheckShaderError(HRESULT hr, ID3DBlob * error)
 {
 	if (FAILED(hr))
@@ -520,6 +580,35 @@ void ShaderManager::AddShaderProcess(wstring fileName, ShaderManagingType type, 
 		(iter->second)->CreatePixelShader(name);
 		break;
 	default:
+		break;
+	}
+}
+
+void ShaderManager::SetShader(wstring fileName, ShaderManagingType type)
+{
+	map<wstring, Shader*>::iterator iter = shaders.find(fileName);
+	if (iter == shaders.end())
+		return;
+
+	switch (type)
+	{
+	case SHADER_MANAGE_VERTEX:
+		(iter->second)->SetVertexShader();
+		break;
+	case SHADER_MANAGE_HULL:
+		(iter->second)->SetHullShader();
+		break;
+	case SHADER_MANAGE_DOMAIN:
+		(iter->second)->SetDomainShader();
+		break;
+	case SHADER_MANAGE_GEOMETRY:
+		(iter->second)->SetGeometryShader();
+		break;
+	case SHADER_MANAGE_COMPUTE:
+		(iter->second)->SetComputeShader();
+		break;
+	case SHADER_MANAGE_PIXEL:
+		(iter->second)->SetPixelShader();
 		break;
 	}
 }

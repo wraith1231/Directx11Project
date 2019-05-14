@@ -1,4 +1,14 @@
-﻿19.05.06
+﻿19.05.14
+./Camera/CameraBase
+./Render/RenderManager
+./Object/Object
+일단 기초로 만들었습니다
+./Object 아래 ObjectManager도 추가할 예정
+
+19.05.09
+./Render/Shader에 특정 shader만 set 할 수 있도록 설정하기
+
+19.05.06
 ./Render/Shader에 ShaderManager에 AddShaderProcess 추가했습니다, 파일 이름, 추가할 쉐이더 단계, 함수 이름 전달받으면 해당하는 shader가 있는지 확인후 만들어줍니다
 ./Common.h에 Shader에 전달할 Vertex 정보들 구조체 넣어뒀습니다.
 

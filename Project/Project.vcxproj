@@ -144,7 +144,10 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camera\CameraBase.h" />
     <ClInclude Include="Common.h" />
+    <ClInclude Include="Object\Object.h" />
+    <ClInclude Include="Render\RenderManager.h" />
     <ClInclude Include="Render\Shader.h" />
     <ClInclude Include="Render\States.h" />
     <ClInclude Include="stdafx.h" />
@@ -154,7 +157,10 @@
     <ClInclude Include="System\Windows.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Camera\CameraBase.cpp" />
+    <ClCompile Include="Object\Object.cpp" />
     <ClCompile Include="Project.cpp" />
+    <ClCompile Include="Render\RenderManager.cpp" />
     <ClCompile Include="Render\Shader.cpp" />
     <ClCompile Include="Render\States.cpp" />
     <ClCompile Include="stdafx.cpp">
