@@ -146,6 +146,7 @@
   <ItemGroup>
     <ClInclude Include="Camera\CameraBase.h" />
     <ClInclude Include="Common.h" />
+    <ClInclude Include="Object\Model.h" />
     <ClInclude Include="Object\Object.h" />
     <ClInclude Include="Render\RenderManager.h" />
     <ClInclude Include="Render\Shader.h" />
@@ -158,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Camera\CameraBase.cpp" />
+    <ClCompile Include="Object\Model.cpp" />
     <ClCompile Include="Object\Object.cpp" />
     <ClCompile Include="Project.cpp" />
     <ClCompile Include="Render\RenderManager.cpp" />

@@ -1,4 +1,11 @@
-﻿19.05.14
+﻿19.05.21
+./Camera/CameraBase
+./Render/RenderManager
+./Object/Object
+생성, 소멸, 기본 함수들 생성
+./Object/Model 생성, 소멸, 기본 함수들 생성, 렌더링을 위한 데이터 모아두는 용도
+
+19.05.14
 ./Camera/CameraBase
 ./Render/RenderManager
 ./Object/Object

@@ -46,3 +46,11 @@ using namespace std;
 //Render Folder
 #include "./Render/Shader.h"
 #include "./Render/States.h"
+#include "./Render/RenderManager.h"
+
+//Camera Folder
+#include "./Camera/CameraBase.h"
+
+//Object Folder
+#include "./Object/Object.h"
+#include "./Object/Model.h"
